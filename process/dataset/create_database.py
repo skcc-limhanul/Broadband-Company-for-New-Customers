@@ -3,7 +3,7 @@ import sqlite3
 from contextlib import closing
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 DATASET_DIR = BASE_DIR / 'dataset'
 
 # Promotion table
