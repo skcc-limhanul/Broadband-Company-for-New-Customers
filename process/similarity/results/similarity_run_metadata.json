@@ -1,0 +1,13 @@
+{
+  "series_start": "2026-01-01",
+  "series_end": "2027-02-18",
+  "target_start": "2026-11-21",
+  "target_end": "2027-02-18",
+  "selected_configuration": {
+    "window_length": 90,
+    "preprocessing": "relative_mean",
+    "method": "hybrid"
+  },
+  "tested_configurations": 144,
+  "neural_network_note": "PyTorch is not installed; statistical and hybrid methods were selected for interpretability."
+}
