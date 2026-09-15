@@ -1,0 +1,136 @@
+2026-09-14
+- Created task branch `task/document-similarity-recap` before making changes.
+- Read the repository instructions and inspected the similarity implementation,
+  README, task instruction, and generated result artifacts under
+  `process/similarity/`.
+- Added the requested job-step logging instruction to `AGENTS.md`.
+- Reviewed the recorded similarity metadata and CSV metrics: 144 tested
+  configurations, selected 90-day relative-mean hybrid configuration, and five
+  ranked historical matches.
+- Created `document/similarity-analysis-report.md` summarizing the similarity
+  work, measured results, generated artifacts, reproduction command, and
+  limitations.
+- Ran focused validation with Python compilation, whitespace checks, artifact
+  consistency assertions, and a final diff/status review.
+
+2026-09-14 — Complete similarity experimentation and full report
+- Created `task/complete-similarity-analysis`; preserved existing user changes.
+- Read repository guidance, the complete analysis instruction, existing code,
+  README, report and prior job log; audited the local subscriber table.
+- Verified 8,280 records, 414 consecutive days, 20 records/day, no duplicate
+  dimension/date keys and no null counts; analyzed aggregate weekday behavior.
+- Added the comprehensive chronological protocol, 45/75-day windows, smoothing
+  and DTW-band ablations, hybrid weights, historical-only CNN fitting, two
+  pooling architectures/two seeds, baselines and aligned comparison plots.
+- Fixed tied ranks, constant cosine handling, zero-gap overlap, future-date
+  truncation and inaccurate hard-coded neural availability reporting.
+- Installed optional torch/numba in /tmp/broadband-similarity-env, outside repo.
+- Executed 700 main-grid configurations: 550 statistical/hybrid, 40 neural and
+  110 baseline settings; seven tuning and four holdout dates, two horizons.
+- Visually inspected selected matches and all method champions. Observed DTW
+  weekday phase errors; executed six further weekday-penalty configurations.
+- Selected 45-day smooth3_zscore correlation from tuning only: top-3 RMSE
+  0.046789 tuning / 0.083512 holdout. Kept post-holdout refinements exploratory.
+- Expanded document/similarity-analysis-report.md to 1,166 lines: complete
+  main-grid comparison, neural trials, method champion top-five dates/scores,
+  horizon sensitivity, visual interpretation, six follow-up trials and limits.
+- Updated README and added five intentional report PNG deliverables under
+  process/similarity/results/comprehensive. Kept generated CSV/JSON evidence
+  outside repository at /tmp/broadband-similarity-results.
+- Added five regression tests; all passed with PyTorch. Base environment passed
+  four tests and skipped the optional neural test. Syntax and diff checks passed.
+- Verified 15,400 per-query rows, 2,800 summary rows, 3,500 latest matches,
+  finite metrics, candidate gaps, seven-day match diversity and report links.
+  Documented 198 query/horizon rows with four available diversified neighbors;
+  all top-three evaluations have three neighbors.
+- Reviewed final changes and removed generated Python bytecode from repository.
+  No commit, push or PR performed. User validation is the next delivery step.
+
+2026-09-14 — Beginner-friendly similarity report
+- Created task branch `task/simple-similarity-report`, preserving prior work.
+- Read repository instructions, full report, import script and existing job log.
+- Queried the database read-only to verify four segment sample records and
+  seven daily aggregate totals. Clarified that existing records were not
+  fabricated by the analysis; original workbook provenance remains unverified.
+- Created document/similarity-analysis-report-simple.md with the selected
+  method, actual data samples, clearly labeled invented teaching examples,
+  beginner definitions of all four requested metrics, a worked top-three vs
+  ensemble example, latest matches, an existing plot and practical limitations.
+- Checked sample values against SQLite, metric values against the full report,
+  relative links, arithmetic and whitespace. No analysis rerun was needed for
+  this documentation-only task. Full report and implementation were preserved.
+- No commit, push or PR performed; awaiting user validation per AGENTS.md.
+
+2026-09-15 — Correct analysis basis to independent leaf segments
+- Continued the task started on 2026-09-14, using branch
+  `task/segment-level-similarity`; preserved existing user changes.
+- Confirmed the intended unit is (service, service_sub, channel), not combined
+  subscriber totals. Explicitly superseded the earlier aggregate conclusions.
+- Changed select_daily_series to require exactly one full segment key and
+  reject duplicate/missing days, missing keys and non-finite counts.
+- Changed CLI dispatch to analyze all matching leaf keys separately by default;
+  partial filters never aggregate. Added independent segment workers and
+  identity-labeled CSVs, per-segment metadata and combined result indexes.
+- Retained same-segment-only historical matching, training and normalization;
+  limited distance computation to eligible candidates with equivalence tests.
+- Completed all 20 segments: 14,000 main-grid trials (11,000 statistical/hybrid,
+  800 neural, 2,200 baseline) plus 120 diagnostic weekday-aware DTW refinements.
+  The original running process finished successfully; resume did not rerun it.
+- Rebuilt both reports from the corrected outputs; included actual single-key
+  sample counts, all 20 selected configurations, top-five matches per segment,
+  per-query errors, method/CNN comparisons and beginner metric explanations.
+- Added the complete 14,000-row segment configuration appendix and 22 report
+  figures under process/similarity/results/segments. Numeric run artifacts
+  remain outside the repo at /tmp/broadband-leaf-analysis.
+- Visually inspected the all-segment raw-shape overview and the detailed
+  초고속/IP/직접 matches; documented shape/continuation differences and the
+  meaning of zero hybrid rank distance and transformed plot axes.
+- The example 초고속/IP/직접 selects 30-day smooth14_zscore hybrid_shape:
+  top-three RMSE 0.059136 tuning / 0.102484 holdout. Every segment's selected
+  holdout error exceeds its tuning error; no aggregate winner is carried over.
+- All 11 regression tests passed with PyTorch; base environment passed ten
+  and skipped the optional CNN test. Single-leaf quick CLI validation passed.
+- Audited all 20 source fingerprints, dimension keys, source-window shape and
+  mean ratios, tuning-only winners, temporal gaps, diversity and finite metrics.
+  Verified 308,000 query rows, 56,000 summary rows, 70,000 all-setting matches,
+  1,440 refinement rows and 100 selected matches; checked report links.
+- Reviewed scope and whitespace. No commit, push or PR performed. User validation
+  is the next delivery step under the repository's AGENTS.md workflow.
+
+2026-09-15 — Translate similarity analysis reports to Korean
+- Created `similarity-analysis-report-simple_ko.md` and
+  `similarity-analysis-report_ko.md` beside the English originals.
+- Translated reader-facing prose, headings, captions, and table labels to Korean;
+  preserved report values, dates, identifiers, formulas, code tokens, and image
+  references. Updated Korean-report cross-links to target the Korean files.
+- Performed structural checks for untranslated prose patterns and source links.
+- No analysis rerun, commit, push, or PR performed; awaiting user validation.
+
+2026-09-15 — Display 방송 / IP / 지역 subscriber dataset
+- Ran the requested `df_subscribers` query, sorted by date, and displayed the
+  resulting 414 daily rows (2026-01-01 through 2027-02-18).
+- No application or data changes were made; no commit, push, or PR performed.
+
+2026-09-15 — Document project tasks in README
+- Created branch `docs/project-tasks-readme` before editing; preserved existing
+  working-tree changes and existing segment-analysis instructions.
+- Reviewed the importer, analysis CLI, repository guidelines, and report index.
+- Expanded README with project scope, a task index, Python setup, workbook/table
+  mappings, the table-replacement behavior, result location, and report links in
+  English and Korean; organized experiment and validation instructions.
+- Validated all README relative links, section anchors, balanced code fences,
+  and whitespace; reviewed the final diff. No code or database changes were made,
+  and no analysis or regression suite rerun was needed for this documentation task.
+- No commit, push, or PR performed; user validation is the next delivery step.
+
+2026-09-15 — Prepare pull request to main
+- User validated the README and explicitly authorized including all pending
+  project work in the PR on `docs/project-tasks-readme`.
+- Reviewed pending source, regression checks, documentation, and saved results;
+  retained earlier aggregate artifacts as superseded by the segment reports.
+- Ran the regression suite: 11 tests, 10 passed, one skipped because optional
+  PyTorch is unavailable. Checked documentation links, whitespace, file scope,
+  and credential patterns. The comprehensive experiment was not rerun.
+- Prepared all authorized pending files for commit, push, and a PR targeting main.
+- Removed a trailing blank line in the configuration appendix identified by
+  the staged whitespace check.

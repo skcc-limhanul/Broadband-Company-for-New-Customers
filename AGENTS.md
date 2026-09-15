@@ -23,6 +23,7 @@ files in subdirectories, if present, may add or refine these rules for their sco
   what was run and any limitations.
 - Review the final diff for correctness, scope, accidental files, and sensitive data
   before handing off the work.
+- write recap of your jobs steps to ./document/job/job.log
 
 ## Version control and delivery
 
